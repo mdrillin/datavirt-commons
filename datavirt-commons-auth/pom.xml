@@ -1,0 +1,106 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.jboss.datavirt</groupId>
+    <artifactId>datavirt-commons</artifactId>
+    <version>1.0.0</version>
+  </parent>
+  <artifactId>datavirt-commons-auth</artifactId>
+  <packaging>bundle</packaging>
+  <name>DataVirt Commons: Auth</name>
+  <description>Contains authentication and authorization classes shared by the Data Virtualization projects.</description>
+
+  <dependencies>
+    <!-- PicketBox -->
+    <dependency>
+      <groupId>org.picketbox</groupId>
+      <artifactId>picketbox</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <!-- PicketLink -->
+    <dependency>
+      <groupId>org.picketlink</groupId>
+      <artifactId>picketlink-core</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <!-- JBoss Security -->
+    <dependency>
+      <groupId>org.jboss.as</groupId>
+      <artifactId>jboss-as-security</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <!-- Tomcat -->
+    <dependency>
+      <groupId>org.apache.tomcat</groupId>
+      <artifactId>catalina</artifactId>
+      <scope>provided</scope>
+    </dependency>
+
+    <!-- Provided libraries -->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>servlet-api</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>javax.security.jacc</groupId>
+      <artifactId>javax.security.jacc-api</artifactId>
+      <scope>provided</scope>
+    </dependency>
+
+    <!-- Common libraries -->
+    <dependency>
+      <groupId>commons-codec</groupId>
+      <artifactId>commons-codec</artifactId>
+    </dependency>
+  </dependencies>
+  
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <extensions>true</extensions>
+        <configuration>
+          <instructions>
+            <Bundle-SymbolicName>${project.groupId}.${project.artifactId}</Bundle-SymbolicName>
+            <Bundle-Name>${project.name}</Bundle-Name>
+            <Bundle-Version>${project.version}</Bundle-Version>
+            <Export-Package>
+              org.jboss.datavirt.commons.auth.util
+            </Export-Package>
+            <Import-Package>
+              javax.security.auth,
+              javax.security.auth.callback,
+              javax.security.auth.login,
+              javax.security.jacc,
+              javax.servlet,
+              javax.servlet.http,
+              javax.xml.datatype,
+              javax.xml.stream,
+              javax.xml.transform,
+              javax.xml.transform.dom,
+              !org.apache.catalina,
+              !org.apache.catalina.connector,
+              !org.apache.catalina.realm,
+              !org.apache.catalina.valves,
+              !org.apache.commons.codec.binary,
+              !org.jboss.as.security.vault,
+              !org.jboss.security,
+              !org.jboss.security.auth.spi,
+              !org.jboss.security.vault,
+              org.picketlink.identity.federation.api.saml.v2.sig,
+              org.picketlink.identity.federation.core.exceptions,
+              org.picketlink.identity.federation.core.parsers.saml,
+              org.picketlink.identity.federation.core.saml.v2.factories,
+              org.picketlink.identity.federation.core.saml.v2.util,
+              org.picketlink.identity.federation.saml.v2.assertion,
+              org.w3c.dom
+            </Import-Package>
+          </instructions>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

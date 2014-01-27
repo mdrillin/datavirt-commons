@@ -1,0 +1,11 @@
+<jboss-deployment-structure>
+
+  <deployment>
+    <!-- Add picketlink module dependency -->
+    <dependencies>
+      <module name="org.picketlink" />
+      <module name="org.jboss.datavirt.commons.datavirt-commons-auth" />
+    </dependencies>
+  </deployment>
+</jboss-deployment-structure>
+

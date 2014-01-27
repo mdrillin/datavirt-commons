@@ -1,0 +1,25 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.jboss.datavirt</groupId>
+    <artifactId>datavirt-commons</artifactId>
+    <version>1.0.0</version>
+  </parent>
+  <artifactId>datavirt-commons-idp</artifactId>
+  <packaging>war</packaging>
+  <name>DataVirt Commons: IDP</name>
+  <description>An identity provider using PicketLink SAML.</description>
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-war-plugin</artifactId>
+        <configuration>
+          <failOnMissingWebXml>false</failOnMissingWebXml>
+          <warName>${project.artifactId}</warName>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

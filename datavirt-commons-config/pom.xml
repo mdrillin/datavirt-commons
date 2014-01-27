@@ -1,0 +1,65 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.jboss.datavirt</groupId>
+    <artifactId>datavirt-commons</artifactId>
+    <version>1.0.0</version>
+  </parent>
+
+  <artifactId>datavirt-commons-config</artifactId>
+  <packaging>bundle</packaging>
+  <name>DataVirt Commons: Config</name>
+  <description>Contains configuration classes used by the various datavirt projects.</description>
+
+  <dependencies>
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>commons-configuration</groupId>
+      <artifactId>commons-configuration</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.osgi</groupId>
+      <artifactId>org.osgi.core</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.picketbox</groupId>
+      <artifactId>picketbox</artifactId>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+  
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <extensions>true</extensions>
+        <configuration>
+          <instructions>
+            <Bundle-SymbolicName>${project.groupId}.${project.artifactId}</Bundle-SymbolicName>
+            <Bundle-Name>${project.name}</Bundle-Name>
+            <Bundle-Version>${project.version}</Bundle-Version>
+            <Bundle-Activator>org.jboss.datavirt.commons.config.Activator</Bundle-Activator>
+            <Export-Package>
+              org.jboss.datavirt.commons.config,
+              org.jboss.datavirt.commons.config.services
+            </Export-Package>
+            <Import-Package>
+              org.apache.commons.configuration,
+              org.apache.commons.configuration.interpol,
+              org.apache.commons.configuration.reloading,
+              org.apache.commons.lang.text,
+              org.osgi.framework,
+              !org.jboss.security.vault
+            </Import-Package>
+          </instructions>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
