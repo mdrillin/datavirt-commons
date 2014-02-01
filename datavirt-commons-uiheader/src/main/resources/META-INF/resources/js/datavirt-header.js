@@ -1,36 +1,36 @@
 var DATAVIRT_HEADER_DATA_DEFAULTS = {
   "primaryBrand" : "JBoss Data Virtualization",
-  "secondaryBrand" : "UI",
+  "secondaryBrand" : "",
   "username" : "jdoe",
   "logoutLink" : "?GLO=true",
 };
 
 var DATAVIRT_HEADER_TEMPLATE = '\
-  <div class="overlord-navbar">\
-    <div class="overlord-navbar-brand">\
+  <div class="datavirt-navbar">\
+    <div class="datavirt-navbar-brand">\
       <a class="brand"></a>\
-      <a class="subbrand overlord-desktop-only"></a>\
-      <div class="overlord-nav-user overlord-desktop-only">\
+      <a class="subbrand datavirt-desktop-only"></a>\
+      <div class="datavirt-nav-user datavirt-desktop-only">\
         <a href="#">\
-          <span class="overlord-nav-username overlord-header-username"></span>\
+          <span class="datavirt-nav-username datavirt-header-username"></span>\
         </a>\
       </div>\
-      <div class="overlord-nav-user-menu">\
+      <div class="datavirt-nav-user-menu">\
         <ul>\
-          <li><a class="overlord-nav-logout">Logout</a></li>\
+          <li><a class="datavirt-nav-logout">Logout</a></li>\
         </ul>\
       </div>\
-      <div class="overlord-nav-mobile overlord-mobile-only">\
+      <div class="datavirt-nav-mobile datavirt-mobile-only">\
         Menu\
       </div>\
     </div>\
   </div>\
-  <div class="overlord-mobile-nav">\
-    <ul class="overlord-nav-list overlord-mobile-only">\
-      <li class="overlord-nav-header overlord-mobile-navigation">Navigation</li>\
-      <li class="overlord-nav-header overlord-header-username"></li>\
+  <div class="datavirt-mobile-nav">\
+    <ul class="datavirt-nav-list datavirt-mobile-only">\
+      <li class="datavirt-nav-header datavirt-mobile-navigation">Navigation</li>\
+      <li class="datavirt-nav-header datavirt-header-username"></li>\
       <li>\
-        <a class="overlord-nav-logout">Logout</a>\
+        <a class="datavirt-nav-logout">Logout</a>\
       </li>\
     </ul>\
   </div>';
@@ -59,7 +59,7 @@ function ovl_createMobileLinkHtml(tab) {
  * @param numTabs
  */
 function ovl_createNavigationTab(tab) {
-    var markup = $('<a class="overlord-navbar-tab"></a>');
+    var markup = $('<a class="datavirt-navbar-tab"></a>');
     if (tab.active) {
         $(markup).addClass('active');
     }
@@ -70,7 +70,7 @@ function ovl_createNavigationTab(tab) {
 
 /**
  * Register a function that will render the header when the page loads.  This
- * function expects to find a div with id='overlord-header', which it will use
+ * function expects to find a div with id='datavirt-header', which it will use
  * as the container for the header.  If such a div is not present, the header
  * will not be created.
  */
@@ -81,43 +81,43 @@ $(document).ready(function() {
     } catch (e) {
         // drop
     }
-    $('#overlord-header').html(DATAVIRT_HEADER_TEMPLATE);
-    $('#overlord-header a.brand').text(data.primaryBrand);
-    $('#overlord-header a.subbrand').text(data.secondaryBrand);
-    $('#overlord-header .overlord-header-username').text(data.username);
-    $('#overlord-header a.overlord-nav-logout').attr("href", data.logoutLink);
+    $('#datavirt-header').html(DATAVIRT_HEADER_TEMPLATE);
+    $('#datavirt-header a.brand').text(data.primaryBrand);
+    $('#datavirt-header a.subbrand').text(data.secondaryBrand);
+    $('#datavirt-header .datavirt-header-username').text(data.username);
+    $('#datavirt-header a.datavirt-nav-logout').attr("href", data.logoutLink);
     if (data.tabs) {
         var tabs = data.tabs;
         if (tabs.length > 0) {
             for (var i=0; i < data.tabs.length; i++) {
                 var tab = data.tabs[i];
                 var tabHtml = ovl_createNavigationTab(tab);
-                $('#overlord-header .overlord-navbar .overlord-navbar-tabs').append(tabHtml);
+                $('#datavirt-header .datavirt-navbar .datavirt-navbar-tabs').append(tabHtml);
             }
         }
         for (var i = data.tabs.length-1; i >= 0; i--) {
             var tab = data.tabs[i];
             var linkHtml = ovl_createMobileLinkHtml(tab);
-            $('#overlord-header .overlord-mobile-nav .overlord-nav-list .overlord-mobile-navigation').after(linkHtml);
+            $('#datavirt-header .datavirt-mobile-nav .datavirt-nav-list .datavirt-mobile-navigation').after(linkHtml);
         }
     }
-    $('#overlord-header .overlord-nav-mobile').click(function() {
-        $('#overlord-header .overlord-mobile-nav').slideToggle('fast');
+    $('#datavirt-header .datavirt-nav-mobile').click(function() {
+        $('#datavirt-header .datavirt-mobile-nav').slideToggle('fast');
     });
-    $('#overlord-header .overlord-nav-user').click(function(event) {
+    $('#datavirt-header .datavirt-nav-user').click(function(event) {
         event.preventDefault();
         event.stopPropagation();
         var h = $(this).position().top + $(this).outerHeight();
         var w = $(this).outerWidth() - 1;
-        $('#overlord-header .overlord-nav-user-menu').css({
+        $('#datavirt-header .datavirt-nav-user-menu').css({
             'right': 0,
             'top': h,
             'min-width': w
         });
-        $('#overlord-header .overlord-nav-user-menu').slideToggle('fast');
+        $('#datavirt-header .datavirt-nav-user-menu').slideToggle('fast');
     });
     $('body').click(function() {
-        $('#overlord-header .overlord-nav-user-menu').hide();
+        $('#datavirt-header .datavirt-nav-user-menu').hide();
     });
 });
 

@@ -1,21 +1,20 @@
-#overlord-header {
+#datavirt-header {
   font-family: OpenSansRegular,Arial,Helvetica,sans-serif;
   font-size: 13px;
 }
-#overlord-header .overlord-navbar {
+#datavirt-header .datavirt-navbar {
   border-top: 2px solid #f4d7a0;
 }
-#overlord-header .overlord-navbar .overlord-navbar-brand {
+#datavirt-header .datavirt-navbar .datavirt-navbar-brand {
   border-top: 1px solid #e8e788;
-  background-color: #121e34;
-  background-image: url(overlord-header-images/overlord-bg.png);
+  background-color: #222222;
   background-position: top left;
   background-repeat: no-repeat;
   font-size: 11px;
   width: 100%;
-  height: 27px;
+  height: 26px;
 }
-#overlord-header .overlord-navbar .overlord-navbar-brand a.brand, #overlord-header .overlord-navbar .overlord-navbar-brand a.subbrand {
+#datavirt-header .datavirt-navbar .datavirt-navbar-brand a.brand, #datavirt-header .datavirt-navbar .datavirt-navbar-brand a.subbrand {
   font-size: 15px;
   font-family: Tahoma,Helvetica,Arial,sans-serif;
   text-transform: capitalize;
@@ -26,18 +25,17 @@
   cursor: default;
   text-decoration: none;
 }
-#overlord-header .overlord-navbar .overlord-navbar-brand a.brand {
-  background-image: url(overlord-header-images/overlord_icon_16px.png);
+#datavirt-header .datavirt-navbar .datavirt-navbar-brand a.brand {
   background-position: 10px 5px;
   background-repeat: no-repeat;
   font-weight: bold;
   padding-left: 32px;
 }
-#overlord-header .overlord-navbar .overlord-navbar-brand a.subbrand {
+#datavirt-header .datavirt-navbar .datavirt-navbar-brand a.subbrand {
   padding-left: 8px;
 }
 
-#overlord-header .overlord-navbar .overlord-navbar-brand .overlord-nav-user {
+#datavirt-header .datavirt-navbar .datavirt-navbar-brand .datavirt-nav-user {
   float: right;
   cursor: pointer;
   border-left: 1px solid #58595d;
@@ -49,21 +47,21 @@
   background-position: 8px 7px;
   background-repeat: no-repeat;
 }
-#overlord-header .overlord-navbar .overlord-navbar-brand .overlord-nav-user:hover {
+#datavirt-header .datavirt-navbar .datavirt-navbar-brand .datavirt-nav-user:hover {
   background-color: rgba(255,255,255,0.2);
 }
-#overlord-header .overlord-navbar .overlord-navbar-brand .overlord-nav-user a {
+#datavirt-header .datavirt-navbar .datavirt-navbar-brand .datavirt-nav-user a {
   color: white;
   text-decoration: none;
 }
-#overlord-header .overlord-navbar .overlord-navbar-brand .overlord-nav-username {
+#datavirt-header .datavirt-navbar .datavirt-navbar-brand .datavirt-nav-username {
   padding-right: 18px;
   background-image: url('overlord-header-images/dropdown_icon.png');
   background-position: center right;
   background-repeat: no-repeat;
 }
 
-#overlord-header .overlord-navbar .overlord-navbar-brand .overlord-nav-user-menu {
+#datavirt-header .datavirt-navbar .datavirt-navbar-brand .datavirt-nav-user-menu {
   display: none;
   border-left: 1px solid #58595d;
   border-top: 1px solid #58595d;
@@ -74,26 +72,26 @@
   padding-bottom: 15px;
   box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.3);
 }
-#overlord-header .overlord-navbar .overlord-navbar-brand .overlord-nav-user-menu ul {
+#datavirt-header .datavirt-navbar .datavirt-navbar-brand .datavirt-nav-user-menu ul {
   list-style: none outside none;
   padding: 0px;
   margin: 0px;
 }
-#overlord-header .overlord-navbar .overlord-navbar-brand .overlord-nav-user-menu ul li {
+#datavirt-header .datavirt-navbar .datavirt-navbar-brand .datavirt-nav-user-menu ul li {
   padding-left: 15px;
   padding-right: 10px;
   padding-top: 2px;
   padding-bottom: 2px;
   margin-top: 3px;
 }
-#overlord-header .overlord-navbar .overlord-navbar-brand .overlord-nav-user-menu ul li:hover {
+#datavirt-header .datavirt-navbar .datavirt-navbar-brand .datavirt-nav-user-menu ul li:hover {
   background-color: #717479;
 }
-#overlord-header .overlord-navbar .overlord-navbar-brand .overlord-nav-user-menu ul li a {
+#datavirt-header .datavirt-navbar .datavirt-navbar-brand .datavirt-nav-user-menu ul li a {
   color: white;
 }
 
-#overlord-header .overlord-navbar .overlord-navbar-brand .overlord-nav-mobile {
+#datavirt-header .datavirt-navbar .datavirt-navbar-brand .datavirt-nav-mobile {
   float: right;
   color: white;
   font-size: 15px;
@@ -106,44 +104,21 @@
   cursor: pointer;
   width: 25px;
   height: 24px;
-  background-image: url('overlord-header-images/mobile-menu.png');
   background-position: 8px 4px;
   background-repeat: no-repeat;
 }
 
-#overlord-header .overlord-navbar .overlord-navbar-nav {
-  height: 43px;
-  background-image: url('overlord-header-images/tab-normal-bg.png');
-  background-position: top left;
-  background-repeat: repeat-x;
-}
-
-#overlord-header .overlord-navbar .overlord-navbar-nav .overlord-navbar-tabs .overlord-navbar-tab {
-  float: left;
-  height: 43px;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 12px;
-  color: rgb(219, 218, 218);
-}
-#overlord-header .overlord-navbar .overlord-navbar-nav .overlord-navbar-tabs .overlord-navbar-tab.active {
-  background-image: url('overlord-header-images/tab-active-bg.png');
-  background-position: top left;
-  background-repeat: repeat-x;
-  color: white;
-}
-
-#overlord-header .overlord-mobile-nav {
+#datavirt-header .datavirt-mobile-nav {
   display: none;
 }
 
-#overlord-header .overlord-mobile-nav {
+#datavirt-header .datavirt-mobile-nav {
   display: none;
 }
-#overlord-header .overlord-mobile-nav .overlord-nav-list {
+#datavirt-header .datavirt-mobile-nav .datavirt-nav-list {
   border-bottom: 2px solid #58595d;
 }
-#overlord-header .overlord-mobile-nav .overlord-nav-list {
+#datavirt-header .datavirt-mobile-nav .datavirt-nav-list {
   padding: 0px;
   padding-right: 15px;
   padding-left: 15px;
@@ -154,7 +129,7 @@
   padding-bottom: 10px;
   background-color: #121e34;
 }
-#overlord-header .overlord-mobile-nav .overlord-nav-list .overlord-nav-header {
+#datavirt-header .datavirt-mobile-nav .datavirt-nav-list .datavirt-nav-header {
   display: block;
   margin-right: -15px;
   margin-left: -15px;
@@ -166,7 +141,7 @@
   text-shadow: 0px 1px 0px rgba(40,40,40, 0.5);
   text-transform: uppercase;
 }
-#overlord-header .overlord-mobile-nav .overlord-nav-list li a {
+#datavirt-header .datavirt-mobile-nav .datavirt-nav-list li a {
   padding: 3px 15px;
   margin-right: -15px;
   margin-left: -15px;
@@ -175,11 +150,11 @@
   color: #ddd;
   text-decoration: none;
 }
-#overlord-header .overlord-mobile-nav .overlord-nav-list li a:hover {
+#datavirt-header .datavirt-mobile-nav .datavirt-nav-list li a:hover {
   color: #fff;
   background-color: #51575c;
 }
-#overlord-header .overlord-mobile-nav .overlord-nav-list li.active a {
+#datavirt-header .datavirt-mobile-nav .datavirt-nav-list li.active a {
   color: rgb(255, 255, 255);
   text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
   background-color: #707378;
@@ -192,27 +167,27 @@
 
 /* Desktop */
 @media ( min-width : 768px) {
-  .overlord-mobile-only {
+  .datavirt-mobile-only {
     display: none !important;
   }
-  .overlord-no-desktop {
+  .datavirt-no-desktop {
     display: none !important;
   }
   
 /* Header Height reduced from 73px to 26px for DataVirt App - eliminates primary tabs */  
-  #overlord-header {
+  #datavirt-header {
     height: 26px;
   }
 
-/* Header Height reduced from 71px to 24px for DataVirt App - eliminates primary tabs */
-  #overlord-header .overlord-navbar {
+/* Header Height reduced from 71px to 26px for DataVirt App - eliminates primary tabs */
+  #datavirt-header .datavirt-navbar {
     top: 0px;
     right: 0px;
     position: fixed;
     left: 0px;
     z-index: 1030;
     margin-bottom: 0px;
-    height: 24px;
+    height: 26px;
     box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.3);
   }
 
@@ -220,14 +195,14 @@
 
 /* Mobile */
 @media ( max-width : 767px) {
-  .overlord-desktop-only {
+  .datavirt-desktop-only {
     display: none !important;
   }
-  .overlord-no-mobile {
+  .datavirt-no-mobile {
     display: none !important;
   }
 
-  #overlord-header .overlord-navbar {
+  #datavirt-header .datavirt-navbar {
     border-bottom: 1px solid #58595d;
   }
 
