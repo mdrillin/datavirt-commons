@@ -26,6 +26,7 @@
   text-decoration: none;
 }
 #datavirt-header .datavirt-navbar .datavirt-navbar-brand a.brand {
+  background-image: url(overlord-header-images/datavirt_icon_16px.png);
   background-position: 10px 5px;
   background-repeat: no-repeat;
   font-weight: bold;
